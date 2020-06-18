@@ -1,0 +1,151 @@
+<!-- Start Welcame Area -->
+{% load static %}
+<section class="junior__welcome__area section-padding--md bg-pngimage--2" style="height:100px;padding:30px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section__title text-center">
+                    <h2 class="title__line">{{ ayar.baslik }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Welcame Area -->
+
+
+
+<!-- Start Call To Action -->
+<!-- End Call To Action -->
+
+<!-- Start our Class Area -->
+<section class="junior__classes__area section-lg-padding--top section-padding--md--bottom bg--white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="section__title text-center">
+                    <h2 class="title__line">Neler Yapıyoruz</h2>
+                    <p> <!-- Bilgiler geliecek --></p>
+                </div>
+            </div>
+        </div>
+        <div class="row classes__wrap activation__one owl-carousel owl-theme clearfix mt--40">
+            <!-- Start Single Classes -->
+			{% for rs in sliderdata %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="junior__classes">
+                    <div class="classes__thumb">
+                        <a href="/urun/{{rs.id}}/{{rs.slug}}">
+                            <img src="{{ rs.image.url }}" alt="class images" style="height:200px;">
+                        </a>
+                    </div>
+                    <div class="classes__inner">
+                        <div class="classes__icon">
+                            <img src="{% static 'images/class/star/1.png' %}" alt="starr images">
+                            <span>Yeni</span>
+                        </div>
+                        <div class="class__details">
+                            <h4><a href="/urun/{{rs.id}}/{{rs.slug}}">{{ rs.title }}</a></h4>
+                            <ul class="class__time">
+                                <li>{{rs.start_time}}</li>
+                                <li>{{rs.finish_time}}</li>
+                            </ul>
+                            <div class="class__btn">
+                                <a class="dcare__btn btn__gray min__height-btn" href="/urun/{{rs.id}}/{{rs.slug}}">İncele</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			{% endfor %}
+            <!-- End Single Classes -->
+        </div>
+    </div>
+</section>
+<!-- End our Class Area -->
+<!-- Start Blog Area -->
+<section class="jnr__blog_area section-padding--lg bg-image--3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="section__title text-center white--title">
+                    <h2 class="title__line">Haber ve Duyurular</h2>
+					</div>
+            </div>
+        </div>
+		
+        <div class="row blog__wrapper mt--40">
+            <!-- Start Single Blog -->
+			{% for rs in duyuru  %}
+            <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInLeft">
+                <article class="blog">
+                    <div class="blog__date">
+                        <span>{{rs.start_time}}</span>
+                    </div>
+                    <div class="blog__thumb">
+                        <a href="/urun/{{rs.id}}/{{rs.slug}}">
+                            <img src="{{rs.image.url}}" height="200" width="100" alt="blog images">
+                        </a>
+                    </div>
+                    <div class="blog__inner">
+                        <span></span>
+                        <h4><a href="/urun/{{rs.id}}/{{rs.slug}}">{{rs.title}}</a></h4>
+                        <p>{{rs.description}}</p>
+                    </div>
+                </article>
+            </div>
+			{% endfor %}
+            <!-- End Single Blog -->
+            
+            <!-- End Single Blog -->
+        </div>
+		
+    </div>
+</section>
+<!-- End Blog Area -->
+<!-- Start upcomming Area -->
+<section class="junior__upcomming__area section-padding--lg bg--white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="section__title text-center">
+                    <h2 class="title__line">Yaklaşan Etkinlikler</h2>
+            </div>
+        </div>
+		</div>
+        <div class="row upcomming__wrap mt--40">
+            <!-- Start Single Upcomming Event -->
+			{% for rs in yaklasan_etkinlik %}
+            <div class="col-lg-6 col-md-12 col-sm-12 wow fadeInLeft">
+                <div class="upcomming__event">
+                    <div class="upcomming__thumb">
+                        <img src="{% static 'images/upcomming/1.png' %}" alt="upcomming images">
+                    </div>
+                    <div class="upcomming__inner">
+                        <h6><a href="/urun/{{rs.id}}/{{rs.slug}}">{{ rs.title }}</a></h6>
+                        <p>{{rs.description}}</p>
+                        <ul class="event__time">
+                            <li><i class="fa fa-home"></i>{{rs.place}}</li>
+                            <li><i class="fa fa-calendar"></i>{{ rs.start_time }}</li>
+                        </ul>
+                    </div>
+                    <div class="event__occur">
+                        <img src="{% static 'images/upcomming/shape/1.png' %}" alt="shape images">
+                        <div class="enent__pub">
+                            <span class="time">YENİ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			{% endfor %}
+            <!-- End Single Upcomming Event -->
+            
+            <!-- End Single Upcomming Event -->
+        </div>
+    
+	</div>
+</section>
+<!-- End upcomming Area -->
+<!-- Start Subscribe Area -->
+
+<!-- End Subscribe Area -->
